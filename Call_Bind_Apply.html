@@ -1,0 +1,50 @@
+<script>
+
+    //Objects
+    let bindObject = {
+        name: "Ankur Kashyap",
+        district: "Shimla"
+    }
+
+    let callObject = {
+        name: "Mukesh Sharma",
+        district: "Hamirpur"
+    }
+
+    let applyObject = {
+        name: "Ravikant Negi",
+        district: "Kinnaur"
+    }
+    //Objects
+
+
+
+    //Functions
+    function bindFunction(state) {
+        console.log(this.name);
+        console.log(this.district);
+        console.log(state);
+    }
+
+    function callFunction(state) {
+        console.log(this.name);
+        console.log(this.district);
+        console.log(state);
+    }
+
+    function applyFunction(state, country) {
+        console.log(this.name);
+        console.log(this.district);
+        console.log(state);
+        console.log(country);
+    }
+    //Functions
+
+    bindFunction = bindFunction.bind(bindObject);
+    bindFunction("Himachal Pradesh");
+
+    callFunction.call(callObject,"Himachal Pradesh");
+
+    applyFunction.apply(applyObject, ["Himachal Pradesh","India"]);
+
+</script>
